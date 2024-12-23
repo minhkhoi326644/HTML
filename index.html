@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <audio autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
     <h1 style="text-align: center;">Báo Tường Về Đội Tuyển Esports T1 </h1>
     <h3>Giới Thiệu</h3>
     <p>Trong hai năm liên tiếp 2023 và 2024, T1 đã ghi dấu son trong lịch sử Liên Minh Huyền Thoại (LMHT) khi giành liên tiếp hai chức vô địch thế giới. Hành trình này không chỉ là minh chứng cho tài năng và bản lĩnh của tập thể, mà còn là biểu tượng cho tinh thần bền bỉ trong Esports.</p>
@@ -32,9 +35,9 @@
     
     <div class="comment-section">
         <h3>Bình Luận Của Bạn Về Bài Báo Tường</h3>
-        <form id="commentForm">
+        <form action="thankcomment.html">
             <label for="name">Tên Của Bạn</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" required><br>
             
             <label for="comment">Bình Luận Của Bạn</label>
             <textarea id="comment" name="comment" rows="4" required></textarea>
@@ -42,7 +45,5 @@
             <button type="submit">Submit</button>
         </form>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
