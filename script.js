@@ -1,30 +1,31 @@
-document.getElementById("commentForm").addEventListener("submit", function(event) {
-    event.preventDefault(); 
+document.getElementById('commentForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
-    const comment = document.getElementById("comment").value.trim();
+    const name = document.getElementById('name').value;
+    const comment = document.getElementById('comment').value;
 
-    if (name && comment) {
-        const commentData = `Tên: ${name}, Comment: ${comment}\n`;
-        fetch('/save-comment', {
+    if (!name || !comment) {
+        alert('Vui lòng nhập tên và bình luận!');
+        return;
+    }
+
+    try {
+        const response = await fetch('/api/submit-comment', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ comment: commentData })
-        })
-        .then(response => {
-            if (response.ok) {
-                alert("Bình Luận Đã Được Gửi");
-                document.getElementById("commentForm").reset();
-            } else {
-                alert("Có Lỗi Khi Lưu Bình Luận");
-            }
-        })
-        .catch(error => {
-            console.error("Error:", error);
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, comment }),
         });
-    } else {
-        alert("Please fill in both fields.");
+
+        const result = await response.json();
+
+        if (response.ok) {
+            alert(result.message);
+            document.getElementById('commentForm').reset();
+        } else {
+            alert(result.error || 'Có lỗi xảy ra!');
+        }
+    } catch (error) {
+        console.error(error);
+        alert('Không thể gửi bình luận.');
     }
 });
