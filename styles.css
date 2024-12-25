@@ -1,89 +1,215 @@
+h1{
+    color:#0099FF
+}
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 20px;
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: #f4f4f9;
+
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+}
+
+#championships {
+    width: 30%;
+    background-color: #1c1c1e;
+    color: #fff;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#championships h4 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #ff0000
+}
+
+#championships ul {
+    list-style: none;
     padding: 0;
 }
 
-h3 {
-    color: #333;
+#championships li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
-p {
-    color: #555;
+#championships img {
+    max-width: 100%;
+    border-radius: 8px;
 }
 
-img {
-    width: 45%;
-    height: auto;
-    margin: 10px;
+#championships span {
+    margin-top: 8px;
+    font-size: 14px;
+    text-align: center;
 }
-h1 {
-    font-size: 36px;
-    font-weight: bold;
+
+.content {
+    width: 65%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.content h1 {
+    text-align: center;
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: #ff0000
+}
+
+.content h3 {
+    margin-top: 20px;
+    color: #ff0000;
+}
+
+.content p {
+    font: size 20px;;
+    line-height: 1.6;
+    color: #111;
+}
+
+.comment-section-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+
+.logo-section {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 1px solid #ccc; 
+    border-radius: 50%;
+}
+
+.logo-section img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 50%; 
+}
+
+
+.comment-section {
+    flex: 1;
+}
+
+.comment-section h3 {
+    margin-bottom: 15px;
+    color: #333; 
+}
+
+.comment-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comment-section label {
+    font-weight: bold;
+    color: #555; 
+}
+
+.comment-section input,
+.comment-section textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.comment-section button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff; 
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.comment-section button:hover {
+    background-color: #0056b3; 
+}
+.content {
+    width: 70%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .image-container {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: space-between;
     gap: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0; 
 }
 
 .image-item {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;   
+    flex: 1;
     text-align: center;
+    background-color: #1c1c1e; 
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
 }
 
+
 .image-item img {
-    width: 300px;
+    max-width: 100%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 2px solid #ff0000;
 }
 
 .image-item .note {
-    font-size: 14px;
-    font-style: italic;
-    color: #7f8c8d;
-    margin-top: 5px; 
-}
-.note {
-    font-size: 12px; 
-    color: #555; 
-    text-align: center; 
-    display: block; 
-    margin-top: 5px; 
-}
-
-.comment-section {
-    margin-top: 20px;
-}
-
-.comment-section input, 
-.comment-section textarea, 
-.comment-section button {
-    margin: 5px 0;
     display: block;
-    width: 100%;
-    max-width: 500px;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #fff;;
 }
 
-button {
-    padding: 10px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+.note {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #fff;;
+    font-weight: bold;
 }
-
-button:hover {
-    background-color: #0056b3;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fade-in {
+    animation: fadeIn 1s ease-out;
+    opacity: 0; 
+    animation-fill-mode: forwards; 
 }
